@@ -1,22 +1,21 @@
-
 const chai = require('chai');
 const expect = chai.expect;
 
 const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 
-describe('Turn', function () {
+describe('Turn', function() {
   let card;
   let turn;
 
   beforeEach(() => {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     turn = new Turn('pug', card);
-   });
+  });
 
-   it('should be a function', function() {
-     expect(Turn).to.be.a('function')
-   });
+  it('should be a function', function() {
+    expect(Turn).to.be.a('function')
+  });
 
   it('should be an instance of Turn', function() {
     expect(turn).to.be.an.instanceof(Turn);
@@ -45,17 +44,11 @@ describe('Turn', function () {
     expect(turn.evaluateGuess()).to.equal(false);
   })
 
-  it('should give affirmative or negative feedback depending on guess', function () {
+  it('should give affirmative or negative feedback depending on guess', function() {
     turn.giveFeedback()
 
     expect(turn.giveFeedback()).to.equal("Sorry, that was wrong.")
 
-
   })
-
-
-
-
-
 
 });

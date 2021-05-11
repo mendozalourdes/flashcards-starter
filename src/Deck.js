@@ -6,7 +6,7 @@ class Deck {
 
 
   countCards() {
-
+    return this.cards.length 
   }
 
 }
