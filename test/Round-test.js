@@ -12,6 +12,7 @@ describe('Round', function() {
   let card1;
   let card2;
   let card3;
+  let turn;
 
 beforeEach(() => {
 
@@ -22,6 +23,7 @@ beforeEach(() => {
   deck = new Deck([card1, card2, card3]);
 
   round = new Round(deck);
+  turn = new Turn();
 });
 
 it('should be a function', function() {
@@ -43,6 +45,28 @@ it('should store cards in a deck', function() {
 it('should should have a current card', function() {
   expect(round.currentCard).to.equal(deck.card1)
 })
+
+it('should return the current card', function() {
+  round.returnCurrentCard();
+  expect(round.returnCurrentCard()).to.equal(round.deck.card1)
+})
+
+it('should start with zero turns', function() {
+  expect(round.turns).to.equal(0)
+})
+
+it('should add a count to turn when a turn is taken', function() {
+  round.takeTurn();
+  expect(round.turns).to.equal(1)
+})
+
+it('should instantiate a new Turn', function() {
+    expect(turn).to.be.an.instanceof(Turn);
+});
+
+
+
+
 
 
 

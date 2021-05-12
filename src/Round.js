@@ -1,3 +1,6 @@
+const Turn = require('./turn');
+
+
 class Round {
   constructor(deck, currentCard) {
     this.incorrectGuesses = []
@@ -8,6 +11,37 @@ class Round {
 
 
   }
+
+  returnCurrentCard() {
+    return this.currentCard;
+  }
+
+  takeTurn() {
+    let turn = new Turn();
+    this.turns++;
+
+
+  }
+
+
+  // takeTurn:  evaluates guesses, gives feedback, and stores ids of incorrect guesses
+  //
+  // The next card becomes current card
+  // Guess is evaluated/recorded. Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
+  // Feedback is returned regarding whether the guess is incorrect or correct
+
+
+calculatePercentCorrect() {
+  //this will need some math where we take the number of this.turns and the guesses 
+
+}
+
+endRound() {
+
+  return `**Round over!** You answered ${this.calculatePercentCorrect}% of the questions correctly!`
+}
+
+
 }
 
 
