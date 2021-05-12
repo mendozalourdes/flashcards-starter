@@ -108,11 +108,25 @@ describe('Round', function() {
 
   })
 
+  it('should provide feedback if the answer is not correct', function() {
+    round.takeTurn('spleen');
+    expect(round.takeTurn('spleen')).to.equal("Sorry, that was wrong.")
 
+  })
 
+  it('should calculate the percentage of correct answers', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.takeTurn('watching Netflix');
+    expect(round.calculatePercentCorrect()).to.equal(33)
+  })
 
-
-
+  it('should provide feedback with the percentage of correct answers', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.takeTurn('watching Netflix');
+    expect(round.endRound()).to.equal("**Round over!** You answered 33% of the questions correctly!")
+  })
 
 
 
