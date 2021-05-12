@@ -96,8 +96,17 @@ describe('Round', function() {
 
   })
 
+  it('should provide feedback if the answer is correct', function() {
+    round.takeTurn('sea otter');
+    expect(round.takeTurn('sea otter')).to.equal("You got it!")
 
+  })
 
+  it('should provide feedback if the answer is not correct', function() {
+    round.takeTurn('spleen');
+    expect(round.takeTurn('spleen')).to.equal("Sorry, that was wrong.")
+
+  })
 
 
 

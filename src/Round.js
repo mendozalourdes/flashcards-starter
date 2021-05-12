@@ -23,25 +23,21 @@ class Round {
       this.incorrectGuesses.push(this.currentCard.id)
       return turn.giveFeedback();
     } else {
-    return turn.giveFeedback();
-  }
+      return turn.giveFeedback();
+    }
 
   }
 
-  // takeTurn:  evaluates guesses, gives feedback, and stores ids of incorrect guesses
 
-  // Feedback is returned regarding whether the guess is incorrect or correct
+  calculatePercentCorrect() {
+    //this will need some math where we take the number of this.turns and the guesses
 
+  }
 
-calculatePercentCorrect() {
-  //this will need some math where we take the number of this.turns and the guesses
+  endRound() {
 
-}
-
-endRound() {
-
-  return `**Round over!** You answered ${this.calculatePercentCorrect}% of the questions correctly!`
-}
+    return `**Round over!** You answered ${this.calculatePercentCorrect}% of the questions correctly!`
+  }
 
 
 }
