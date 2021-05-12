@@ -1,4 +1,4 @@
-const Turn = require('./turn');
+const Turn = require('./Turn');
 
 
 class Round {
