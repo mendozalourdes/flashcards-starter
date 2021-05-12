@@ -22,7 +22,7 @@ describe('Round', function() {
 
     deck = new Deck([card1, card2, card3]);
 
-    round = new Round(deck);
+    round = new Round(deck, card1);
     turn = new Turn();
   });
 
@@ -55,7 +55,7 @@ describe('Round', function() {
   })
 
   it('should should have a current card', function() {
-    expect(round.currentCard).to.equal(deck.cards[0])
+    expect(round.currentCard).to.be.an('object');
   })
 
   it('should return the current card', function() {
@@ -79,18 +79,25 @@ describe('Round', function() {
   });
 
   it('should let the second card in the deck become the current card', function() {
-
+    // expect(round.currentCard).to.equal(deck.cards[0])
     round.takeTurn('sea otter');
-    round.takeTurn('spleen');
     expect(round.currentCard).to.equal(deck.cards[0])
+    round.takeTurn('spleen');
+    expect(round.currentCard).to.equal(deck.cards[1])
   });
 
+  it('should add cards to incorrectGuesses array if guess not correct ', function() {
+    round.takeTurn('sea otter');
+    expect(round.incorrectGuesses).to.deep.equal([])
+    round.takeTurn('spleen');
+    expect(round.incorrectGuesses).to.deep.equal([14]);
+    round.takeTurn('watching Netflix');
+    expect(round.incorrectGuesses).to.deep.equal([14, 12]);
+
+  })
 
 
-  // it('should add cards to incorrectGuesses array if guess not correct ', function() {
-  //
-  //   expect(round.incorrectGuesses).to.deep.equal([])
-  // })
+
 
 
 

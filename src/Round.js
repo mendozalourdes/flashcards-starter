@@ -2,40 +2,34 @@ const Turn = require('./turn');
 
 
 class Round {
-  constructor(deck) {
+  constructor(deck, currentCard) {
     this.incorrectGuesses = []
     this.turns = 0
     this.deck = deck
-    this.currentCard = deck.cards[0]
-
-
-
+    // this.currentCard = deck.cards[0]
+    this.currentCard = currentCard
   }
 
   returnCurrentCard() {
+    this.currentCard = this.deck.cards[this.turns]
     return this.currentCard;
   }
 
   takeTurn(guess) {
     let turn = new Turn(guess, this.currentCard);
+    this.currentCard = this.deck.cards[this.turns]
     this.turns++;
-
-    this.deck.cards.shift();
-    // console.log('index 0', this.deck.cards[0])
-    this.currentCard = this.deck.cards[0]
-    // console.log('currentCard', this.currentCard)
-    return this.currentCard
-
-
-    // return this.currentCard
+    if (!turn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id)
+      return turn.giveFeedback();
+    } else {
+    return turn.giveFeedback();
+  }
 
   }
 
-
   // takeTurn:  evaluates guesses, gives feedback, and stores ids of incorrect guesses
-  //
-  // The next card becomes current card
-  // Guess is evaluated/recorded. Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
+
   // Feedback is returned regarding whether the guess is incorrect or correct
 
 
