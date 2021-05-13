@@ -49,8 +49,6 @@ describe('Round', function() {
   })
 
   it('should store cards in a deck', function() {
-    // console.log(deck.cards[0])
-
     expect(deck.cards).to.deep.equal([card1, card2, card3])
   })
 
@@ -60,15 +58,12 @@ describe('Round', function() {
 
   it('should return the current card', function() {
     round.returnCurrentCard();
-    // console.log(round.deck.card1)
-
     expect(round.returnCurrentCard()).to.equal(round.currentCard)
   })
 
-
-  //
   it('should add a count to turn each time a turn is taken', function() {
     round.takeTurn('sea otter');
+    expect(round.turns).to.equal(1)
     round.takeTurn('spleen');
     expect(round.turns).to.equal(2)
   })
@@ -79,7 +74,6 @@ describe('Round', function() {
   });
 
   it('should let the second card in the deck become the current card', function() {
-    // expect(round.currentCard).to.equal(deck.cards[0])
     round.takeTurn('sea otter');
     expect(round.currentCard).to.equal(deck.cards[0])
     round.takeTurn('spleen');
@@ -99,19 +93,11 @@ describe('Round', function() {
   it('should provide feedback if the answer is correct', function() {
     round.takeTurn('sea otter');
     expect(round.takeTurn('sea otter')).to.equal("correct!")
-
   })
 
   it('should provide feedback if the answer is not correct', function() {
     round.takeTurn('spleen');
     expect(round.takeTurn('spleen')).to.equal("incorrect.")
-
-  })
-
-  it('should provide feedback if the answer is not correct', function() {
-    round.takeTurn('spleen');
-    expect(round.takeTurn('spleen')).to.equal("incorrect.")
-
   })
 
   it('should calculate the percentage of correct answers', function() {
