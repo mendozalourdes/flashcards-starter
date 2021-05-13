@@ -1,4 +1,4 @@
-# Rock-Paper-Scissors
+# FlashCards Game
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
 - [Features](#features)
@@ -18,11 +18,6 @@ To solidify and demonstrate the understanding of:
 3. Contribute code to an partially constructed object-oriented application
 4. Write modular, reusable code that follows SRP (Single Responsibility Principle)
 5. Implement a robust testing suite using TDD
-
-
-## Features
-* A website that allows users to play the traditional Rock, Paper, Scissors game along with a computer player.
-* User can choose between the traditional version or a more difficult level.
 
 **[Back to top](#table-of-contents)**
 
