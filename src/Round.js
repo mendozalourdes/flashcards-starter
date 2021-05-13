@@ -6,7 +6,6 @@ class Round {
     this.incorrectGuesses = []
     this.turns = 0
     this.deck = deck
-    // this.currentCard = deck.cards[0]
     this.currentCard = currentCard
   }
 
@@ -35,8 +34,10 @@ class Round {
   }
 
   endRound() {
-
     return `**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+
+    console.log(`**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
+
   }
 
 }

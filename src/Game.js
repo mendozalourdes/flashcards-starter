@@ -2,7 +2,6 @@ const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Round = require('./Round');
-const Turn = require('./Turn');
 const Deck = require('./Deck');
 const Card = require('./Card');
 
@@ -33,7 +32,3 @@ class Game {
 }
 
 module.exports = Game;
-
-//
-// Your Game class should meet these other requirements:
-// Should keep track of the currentRound

@@ -13,18 +13,12 @@ class Turn {
   }
 
   evaluateGuess() {
-    if (this.guess === this.card.correctAnswer) {
-      return true
-    } else {
-    return false
+    return (this.guess === this.card.correctAnswer ? true : false);
   }
-}
 
   giveFeedback() {
-    if (this.evaluateGuess() === true) {
-      return "You got it!"
-    }
-    return "Sorry, that was wrong."
+    return (this.evaluateGuess() === true ? "correct!" : "incorrect.")
+
   }
 
 
