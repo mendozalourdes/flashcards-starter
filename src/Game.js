@@ -12,19 +12,11 @@ class Game {
   }
 
     start() {
-      // let cards = new Card(this.id, question, answers, correctAnswer)
-      let cards = new Card()
+      let cards = prototypeQuestions.map(card => new Card (card.id, card.question, card.answers, card.correctAnswer));
       let deck  = new Deck(cards)
       this.currentRound = new Round(deck);
-
-// this.printMessage(deck, this.currentRound);
-// this.printQuestion(this.currentRound);
-//       start: method that starts everything
-// Creates Cards
-// Puts Cards in a Deck
-// Creates a new Round using the Deck
-// invokes printMessage to display the message in the CLI
-// invokes printQuestion to kick off our helper functions that allow interaction via the CLI
+      this.printMessage(deck, this.currentRound);
+      this.printQuestion(this.currentRound);
 
     }
 
