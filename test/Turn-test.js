@@ -6,11 +6,15 @@ const Card = require('../src/Card');
 
 describe('Turn', function() {
   let card;
+  let card2;
   let turn;
+  let turn2;
 
   beforeEach(() => {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     turn = new Turn('pug', card);
+    turn2 = new Turn('gallbladder', card2)
   });
 
   it('should be a function', function() {
@@ -45,9 +49,14 @@ describe('Turn', function() {
   })
 
   it('should give affirmative or negative feedback depending on guess', function() {
-    turn.giveFeedback()
+
+    turn.giveFeedback();
 
     expect(turn.giveFeedback()).to.equal("incorrect.")
+
+    turn2.giveFeedback();
+
+    expect(turn2.giveFeedback()).to.equal("correct!")
 
   })
 

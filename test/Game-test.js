@@ -27,18 +27,19 @@ describe('Game', function() {
   });
 
   it('should be a function', function() {
-    expect(Game).to.be.a('function')
+    expect(Game).to.be.a('function');
   });
 
 it('should instantiate a Game', function() {
   expect(game).to.be.an.instanceof(Game);
 });
 
-it('should be able to instantiante a Round class', () => {
-  expect(game.currentRound).to.deep.equal(null)
+it('should be able to instantiante several classes', () => {
+  expect(game.currentRound).to.deep.equal(null);
   game.start()
-  expect(game.currentRound).to.be.an.instanceOf(Round)
-
+  expect(game.currentRound).to.be.an.instanceOf(Round);
+  expect(cards).to.be.an.instanceOf(Card);
+  expect(deck).to.be.an.instanceOf(Deck);
 });
 
 
