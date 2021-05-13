@@ -23,7 +23,7 @@ describe('Round', function() {
     deck = new Deck([card1, card2, card3]);
 
     round = new Round(deck, card1);
-    turn = new Turn();
+    turn = new Turn('sea otter', card1);
   });
 
   it('should be a function', function() {

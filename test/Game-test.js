@@ -11,13 +11,13 @@ const prototypeQuestions = require('../src/data');
 describe('Game', function() {
   let game;
   let deck;
-  let card;
+  let cards;
   let turn;
   let round;
   beforeEach(() => {
      game = new Game();
      deck = new Deck();
-     card = new Card();
+     cards = new Card();
      turn = new Turn();
      round = new Round();
     // card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -39,10 +39,21 @@ it('should instantiate a Game', function() {
 });
 
 it('should be able to instantiante a Round class', () => {
-  //should intantiate the round class
   expect(game.currentRound).to.deep.equal(null)
   game.start()
   expect(game.currentRound).to.be.an.instanceOf(Round)
+
+});
+
+it('should be able to instantiante a Card class', () => {
+  game.start()
+  expect(cards).to.be.an.instanceOf(Card)
+
+});
+
+it('should be able to instantiante a Deck class', () => {
+  game.start()
+  expect(deck).to.be.an.instanceOf(Deck)
 
 });
 

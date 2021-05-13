@@ -12,11 +12,13 @@ class Game {
   }
 
     start() {
-      // let cards = new Card()
+      // let cards = new Card(this.id, question, answers, correctAnswer)
+      let cards = new Card()
+      let deck  = new Deck(cards)
       this.currentRound = new Round(deck);
-      
 
-
+// this.printMessage(deck, this.currentRound);
+// this.printQuestion(this.currentRound);
 //       start: method that starts everything
 // Creates Cards
 // Puts Cards in a Deck
