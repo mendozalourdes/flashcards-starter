@@ -20,10 +20,6 @@ To solidify and demonstrate the understanding of:
 5. Implement a robust testing suite using TDD
 
 
-## Features
-* A website that allows users to play the traditional Rock, Paper, Scissors game along with a computer player.
-* User can choose between the traditional version or a more difficult level.
-
 **[Back to top](#table-of-contents)**
 
 ## Instructions for Running Project
