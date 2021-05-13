@@ -47,7 +47,7 @@ describe('Turn', function() {
   it('should give affirmative or negative feedback depending on guess', function() {
     turn.giveFeedback()
 
-    expect(turn.giveFeedback()).to.equal("Sorry, that was wrong.")
+    expect(turn.giveFeedback()).to.equal("incorrect.")
 
   })
 

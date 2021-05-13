@@ -15,19 +15,15 @@ describe('Game', function() {
   let turn;
   let round;
   beforeEach(() => {
+
+     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+     card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+     card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
      game = new Game();
-     deck = new Deck();
-     cards = new Card();
-     turn = new Turn();
-     round = new Round();
-    // card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    // card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    // card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-
-    // deck = new Deck([card1, card2, card3]);
-
-    // round = new Round(deck, card1);
-    // turn = new Turn();
+     deck = new Deck([card1, card2, card3]);
+     cards = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+     turn = new Turn('sea otter', card1);
+     round = new Round(deck, card1);
   });
 
   it('should be a function', function() {
@@ -45,17 +41,6 @@ it('should be able to instantiante a Round class', () => {
 
 });
 
-it('should be able to instantiante a Card class', () => {
-  game.start()
-  expect(cards).to.be.an.instanceOf(Card)
-
-});
-
-it('should be able to instantiante a Deck class', () => {
-  game.start()
-  expect(deck).to.be.an.instanceOf(Deck)
-
-});
 
 
 
