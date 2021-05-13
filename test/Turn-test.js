@@ -41,11 +41,12 @@ describe('Turn', function() {
     expect(turn.returnCard()).to.equal(card)
   })
 
-  it('should delclare if user guess maches correct answer or not', function() {
-    // const card = new Card('sea otter')
+  it('should delclare if user guess matches the correct answer', function() {
 
     turn.evaluateGuess()
     expect(turn.evaluateGuess()).to.equal(false);
+    turn2.evaluateGuess()
+    expect(turn2.evaluateGuess()).to.equal(true);
   })
 
   it('should give affirmative or negative feedback depending on guess', function() {
