@@ -5,13 +5,11 @@ const Game = require('../src/Game');
 const Round = require('../src/Round');
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
-const prototypeQuestions = require('../src/data');
 
 describe('Game', function() {
   let game;
   let deck;
   let cards;
-  let round;
   beforeEach(() => {
 
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -20,7 +18,6 @@ describe('Game', function() {
     game = new Game();
     deck = new Deck([card1, card2, card3]);
     cards = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    round = new Round(deck, card1);
   });
 
   it('should be a function', function() {
