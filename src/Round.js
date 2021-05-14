@@ -29,15 +29,18 @@ class Round {
 
 
   calculatePercentCorrect() {
-    let percentageCorrect = 100 - Math.ceil((this.incorrectGuesses.length / this.turns) * 100)
+    let percentageCorrect =
+      100 - Math.ceil((this.incorrectGuesses.length / this.turns) * 100)
     return percentageCorrect
   }
 
   endRound() {
 
-    console.log(`**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
+    console.log(`
+      **Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`)
 
-    return `**Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+    return `
+    **Round over!** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 
 }
