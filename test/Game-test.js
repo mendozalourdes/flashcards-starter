@@ -10,6 +10,9 @@ describe('Game', function() {
   let game;
   let deck;
   let cards;
+  let card1;
+  let card2;
+  let card3;
   beforeEach(() => {
 
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
